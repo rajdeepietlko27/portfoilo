@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import emailjs from '@emailjs/browser';
 
 const SERVICE_ID = 'service_a0mig4w';
-const TEMPLATE_ID = '9phmuab';
+const TEMPLATE_ID = 'template_lbr2vxy';
 const PUBLIC_KEY = 'NvCec7p98DW3uz4Sk';
 
 const contactLinks = [
