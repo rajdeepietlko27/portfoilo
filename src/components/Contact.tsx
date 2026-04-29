@@ -1,5 +1,12 @@
-import { Mail, Phone, MapPin,  Send } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { useState, useRef } from 'react';
+import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
+
+const SERVICE_ID = 'service_a0mig4w';
+const TEMPLATE_ID = '9phmuab';
+const PUBLIC_KEY = 'NvCec7p98DW3uz4Sk';
+
 const contactLinks = [
   {
     icon: Mail,
@@ -36,6 +43,29 @@ const socialLinks = [
 ];
 
 export default function Contact() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
+    setError(false);
+
+    try {
+      await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current!, PUBLIC_KEY);
+      setSuccess(true);
+      formRef.current?.reset();
+    } catch (err) {
+      console.error(err);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-slate-950">
       <div className="max-w-6xl mx-auto px-6">
@@ -83,17 +113,28 @@ export default function Contact() {
 
           <div className="p-8 rounded-3xl border border-slate-700/60 bg-slate-900/60">
             <h3 className="text-xl font-bold text-white mb-6">Send a Message</h3>
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                window.location.href = 'mailto:rajdeepsingh20041214@gmail.com';
-              }}
-              className="space-y-4"
-            >
+
+            {/* Success message */}
+            {success && (
+              <div className="mb-4 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-400 text-sm font-medium">
+                ✅ Message sent successfully! I'll get back to you soon.
+              </div>
+            )}
+
+            {/* Error message */}
+            {error && (
+              <div className="mb-4 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm font-medium">
+                ❌ Something went wrong. Please try again or email me directly.
+              </div>
+            )}
+
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-slate-400 text-sm mb-2">Your Name</label>
                 <input
                   type="text"
+                  name="name"
+                  required
                   placeholder="John Doe"
                   className="w-full px-4 py-3 bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/20 transition-all duration-200"
                 />
@@ -102,6 +143,8 @@ export default function Contact() {
                 <label className="block text-slate-400 text-sm mb-2">Email Address</label>
                 <input
                   type="email"
+                  name="email"
+                  required
                   placeholder="john@example.com"
                   className="w-full px-4 py-3 bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/20 transition-all duration-200"
                 />
@@ -110,16 +153,19 @@ export default function Contact() {
                 <label className="block text-slate-400 text-sm mb-2">Message</label>
                 <textarea
                   rows={4}
+                  name="message"
+                  required
                   placeholder="Tell me about the opportunity..."
                   className="w-full px-4 py-3 bg-slate-800 border border-slate-700 text-white placeholder-slate-500 rounded-xl focus:outline-none focus:border-cyan-500/60 focus:ring-1 focus:ring-cyan-500/20 transition-all duration-200 resize-none"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-cyan-500/25"
+                disabled={loading}
+                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-cyan-500/25 disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <Send size={16} />
-                Send Message
+                {loading ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
