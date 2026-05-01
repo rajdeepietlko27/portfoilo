@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import {  Mail, Phone, MapPin, ChevronDown } from 'lucide-react';
-
+import { Mail, Phone, MapPin, ChevronDown, Download } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+
 const roles = ['Full-Stack Developer', 'Competitive Programmer', 'Problem Solver', 'CS Undergrad @ IET Lucknow'];
 
 export default function Hero() {
@@ -80,7 +80,7 @@ export default function Hero() {
           </span>
         </div>
 
-        <div className="flex items-center justify-center gap-4 mb-16">
+        <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
           <a
             href="https://github.com/rajdeepietlko27"
             target="_blank"
@@ -98,6 +98,15 @@ export default function Hero() {
           >
             <FaLinkedin size={18} />
             LinkedIn
+          </a>
+          {/* Download Resume Button */}
+          <a
+            href="/resume.pdf"
+            download="Rajdeep_Singh_Resume.pdf"
+            className="flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-cyan-500/10 border border-cyan-500/60 hover:border-cyan-400 text-cyan-400 hover:text-cyan-300 rounded-xl font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/10"
+          >
+            <Download size={18} />
+            Resume
           </a>
         </div>
 
