@@ -41,10 +41,7 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-800/80 border border-slate-700/60 rounded-full text-sm text-cyan-400 mb-8 backdrop-blur-sm">
-          <span className="w-2 h-2 bg-cyan-400 rounded-full animate-pulse" />
-          Available for opportunities
-        </div>
+      
 
         <h1 className="text-6xl md:text-8xl font-black text-white tracking-tight mb-4 leading-none">
           Rajdeep
