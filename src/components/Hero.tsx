@@ -12,7 +12,6 @@ export default function Hero() {
   useEffect(() => {
     const current = roles[roleIndex];
     let timeout: ReturnType<typeof setTimeout>;
-
     if (typing) {
       if (displayed.length < current.length) {
         timeout = setTimeout(() => setDisplayed(current.slice(0, displayed.length + 1)), 60);
@@ -32,17 +31,12 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
-      {/* Grid background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_40%,transparent_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(6,182,212,0.08)_0%,transparent_70%)]" />
-
-      {/* Floating orbs */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-      
-
+      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-24">
         <h1 className="text-6xl md:text-8xl font-black text-white tracking-tight mb-4 leading-none">
           Rajdeep
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
@@ -78,30 +72,15 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-4 mb-16">
-          <a
-            href="https://github.com/rajdeepietlko27"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-xl font-medium transition-all duration-200 hover:border-slate-500 hover:-translate-y-0.5"
-          >
+          <a href="https://github.com/rajdeepietlko27" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white rounded-xl font-medium transition-all duration-200 hover:border-slate-500 hover:-translate-y-0.5">
             <FaGithub size={18} />
             GitHub
           </a>
-          <a
-            href="https://www.linkedin.com/in/rajdeep-singh-615157282/"
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 rounded-xl font-semibold transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-cyan-500/25"
-          >
+          <a href="https://www.linkedin.com/in/rajdeep-singh-615157282/" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-950 rounded-xl font-semibold transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-cyan-500/25">
             <FaLinkedin size={18} />
             LinkedIn
           </a>
-          {/* Download Resume Button */}
-          <a
-            href="/resume.pdf"
-            download="Rajdeep_Singh_Resume.pdf"
-            className="flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-cyan-500/10 border border-cyan-500/60 hover:border-cyan-400 text-cyan-400 hover:text-cyan-300 rounded-xl font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/10"
-          >
+          <a href="/resume.pdf" download="Rajdeep_Singh_Resume.pdf" className="flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-cyan-500/10 border border-cyan-500/60 hover:border-cyan-400 text-cyan-400 hover:text-cyan-300 rounded-xl font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/10">
             <Download size={18} />
             Resume
           </a>
