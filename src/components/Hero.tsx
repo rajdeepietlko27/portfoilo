@@ -80,7 +80,7 @@ export default function Hero() {
             <FaLinkedin size={18} />
             LinkedIn
           </a>
-          <a href="/resume.pdf" download="Rajdeep_Singh_Resume.pdf" className="flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-cyan-500/10 border border-cyan-500/60 hover:border-cyan-400 text-cyan-400 hover:text-cyan-300 rounded-xl font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/10">
+          <a href="/ResumeR61.pdf" download="Rajdeep_Singh_Resume.pdf" className="flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-cyan-500/10 border border-cyan-500/60 hover:border-cyan-400 text-cyan-400 hover:text-cyan-300 rounded-xl font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/10">
             <Download size={18} />
             Resume
           </a>
