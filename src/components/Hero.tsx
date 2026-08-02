@@ -32,12 +32,13 @@ export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-slate-950">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_40%,transparent_100%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(6,182,212,0.08)_0%,transparent_70%)]" />
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-500/5 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_50%,rgba(6,182,212,0.12)_0%,transparent_60%)]" />
+      <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-cyan-500/10 rounded-full blur-[100px] animate-pulse" />
+      <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-blue-500/8 rounded-full blur-[120px] animate-pulse delay-1000" />
+      <div className="absolute top-10 right-10 w-72 h-72 bg-purple-500/5 rounded-full blur-[90px] animate-pulse delay-700" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-24">
-        <h1 className="text-6xl md:text-8xl font-black text-white tracking-tight mb-4 leading-none">
+        <h1 className="text-6xl md:text-8xl font-black text-white tracking-tight mb-4 leading-none text-balance">
           Rajdeep
           <span className="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
             Singh
@@ -51,7 +52,7 @@ export default function Hero() {
           </p>
         </div>
 
-        <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-balance">
           B.Tech CSE student at IET Lucknow with a 9.48 CGPA, ACM ICPC Asia West Regionalist,
           and LeetCode Knight with 2500+ problems solved across competitive programming platforms.
         </p>
@@ -80,7 +81,7 @@ export default function Hero() {
             <FaLinkedin size={18} />
             LinkedIn
           </a>
-          <a href="/ResumeR63.pdf" download="Rajdeep_Singh_Resume.pdf" className="flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-cyan-500/10 border border-cyan-500/60 hover:border-cyan-400 text-cyan-400 hover:text-cyan-300 rounded-xl font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/10">
+          <a href="/ResumeOFFR67.pdf" download="Rajdeep_Singh_Resume.pdf" className="flex items-center gap-2 px-6 py-3 bg-transparent hover:bg-cyan-500/10 border border-cyan-500/60 hover:border-cyan-400 text-cyan-400 hover:text-cyan-300 rounded-xl font-medium transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-cyan-500/10">
             <Download size={18} />
             Resume
           </a>
@@ -91,9 +92,9 @@ export default function Hero() {
             { value: '9.48', label: 'CGPA' },
             { value: 'AIR 65', label: 'ICPC Asia West' },
             { value: '2500+', label: 'Problems Solved' },
-            { value: '2077', label: 'LeetCode Rating' },
+            { value: '2090', label: 'LeetCode Rating' },
           ].map((stat) => (
-            <div key={stat.label} className="bg-slate-800/50 border border-slate-700/60 rounded-2xl p-4 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-300">
+            <div key={stat.label} className="bg-slate-800/50 border border-slate-700/60 rounded-2xl p-4 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-300 glow-card">
               <div className="text-2xl font-black text-cyan-400">{stat.value}</div>
               <div className="text-xs text-slate-400 mt-1">{stat.label}</div>
             </div>

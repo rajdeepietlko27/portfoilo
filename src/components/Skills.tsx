@@ -40,17 +40,17 @@ export default function Skills() {
   return (
     <section id="about" className="py-24 bg-slate-900">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal-on-scroll">
           <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-3 block">What I Know</span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Skills</h2>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">A well-rounded technical foundation built through competitive programming and real-world projects</p>
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-4 text-balance">Skills</h2>
+          <p className="text-slate-400 text-lg max-w-xl mx-auto text-balance">A well-rounded technical foundation built through competitive programming and real-world projects</p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-12 items-start reveal-on-scroll">
           <div>
             <div className="space-y-4 mb-10">
               {categories.map((cat) => (
-                <div key={cat.title} className={`p-6 rounded-2xl border ${cat.border} bg-slate-950/60 hover:scale-[1.01] transition-all duration-300`}>
+                <div key={cat.title} className={`p-6 rounded-2xl border ${cat.border} bg-slate-950/60 hover:scale-[1.01] transition-all duration-300 glow-card`}>
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`w-10 h-10 rounded-xl ${cat.bg} border ${cat.border} flex items-center justify-center`}>
                       <cat.icon size={18} className={cat.color} />

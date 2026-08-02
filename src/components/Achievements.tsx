@@ -4,7 +4,7 @@ const platforms = [
   {
     name: 'LeetCode',
     badge: 'Knight',
-    rating: '2077',
+    rating: '2090',
     color: 'from-orange-500 to-amber-500',
     border: 'border-orange-500/30',
     bg: 'bg-orange-500/10',
@@ -17,7 +17,7 @@ const platforms = [
   {
     name: 'Codeforces',
     badge: 'Specialist',
-    rating: '1465',
+    rating: '1491',
     color: 'from-cyan-500 to-blue-500',
     border: 'border-cyan-500/30',
     bg: 'bg-cyan-500/10',
@@ -42,14 +42,14 @@ const platforms = [
   },
   {
     name: 'AtCoder',
-    badge: '5 Kyu',
-    rating: '1019',
+    badge: '4 Kyu',
+    rating: '1226',
     color: 'from-green-500 to-teal-500',
     border: 'border-green-500/30',
     bg: 'bg-green-500/10',
     text: 'text-green-400',
     highlight: 'Global Rank 1588 — ABC 430',
-    stars: 3,
+    stars: 4,
     icon: '🎯',
     link: 'https://atcoder.jp/users/Rajdeepsingh_23', // 🔁 Replace with your profile URL
   },
@@ -86,15 +86,15 @@ export default function Achievements() {
   return (
     <section id="achievements" className="py-24 bg-slate-950">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal-on-scroll">
           <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-3 block">Competitive Programming</span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">Achievements</h2>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">Top-ranked across global competitive programming platforms</p>
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-4 text-balance">Achievements</h2>
+          <p className="text-slate-400 text-lg max-w-xl mx-auto text-balance">Top-ranked across global competitive programming platforms</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-3 gap-6 mb-12 reveal-on-scroll">
           {contests.map((c) => (
-            <div key={c.title} className={`p-6 rounded-2xl border ${c.border} ${c.bg} backdrop-blur-sm hover:scale-[1.02] transition-all duration-300`}>
+            <div key={c.title} className={`p-6 rounded-2xl border ${c.border} ${c.bg} backdrop-blur-sm hover:scale-[1.02] transition-all duration-300 glow-card`}>
               <div className={`w-12 h-12 rounded-xl ${c.bg} border ${c.border} flex items-center justify-center mb-4`}>
                 <c.icon size={22} className={c.color} />
               </div>
@@ -104,14 +104,14 @@ export default function Achievements() {
           ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 reveal-on-scroll">
           {platforms.map((p) => (
             <a
               key={p.name}
               href={p.link}
               target="_blank"
               rel="noreferrer"
-              className={`relative p-6 rounded-2xl border ${p.border} bg-slate-900/60 backdrop-blur-sm hover:scale-[1.02] hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer block`}
+              className={`relative p-6 rounded-2xl border ${p.border} bg-slate-900/60 backdrop-blur-sm hover:scale-[1.02] hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer block glow-card`}
             >
               {/* Overlay — pointer-events-none so it never blocks clicks */}
               <div className={`absolute inset-0 bg-gradient-to-br ${p.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`} />

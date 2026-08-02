@@ -90,14 +90,14 @@ export default function Projects() {
   return (
     <section id="projects" className="py-24 bg-slate-900">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 reveal-on-scroll">
           <span className="text-cyan-400 text-sm font-semibold tracking-widest uppercase mb-3 block">
             What I've Built
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-black text-white mb-4 text-balance">
             Projects
           </h2>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto">
+          <p className="text-slate-400 text-lg max-w-xl mx-auto text-balance">
             Production-ready applications built with modern tech stacks
           </p>
         </div>
@@ -106,7 +106,7 @@ export default function Projects() {
           {projects.map((p, i) => (
             <div
               key={p.name}
-              className={`group relative bg-slate-950/60 border ${p.border} rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.01]`}
+              className={`group relative bg-slate-950/60 border ${p.border} rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:scale-[1.01] reveal-on-scroll glow-card`}
             >
               {/* ✅ pointer-events-none so overlay never blocks clicks */}
               <div
