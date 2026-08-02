@@ -53,7 +53,7 @@ export default function Hero() {
         </div>
 
         <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed text-balance">
-          B.Tech CSE student at IET Lucknow with a 9.48 CGPA, ACM ICPC Asia West Regionalist,
+          B.Tech CSE student at IET Lucknow with a 9.44 CGPA, ACM ICPC Asia West Regionalist,
           and LeetCode Knight with 2500+ problems solved across competitive programming platforms.
         </p>
 
@@ -89,9 +89,9 @@ export default function Hero() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
           {[
-            { value: '9.48', label: 'CGPA' },
+            { value: '9.44', label: 'CGPA' },
             { value: 'AIR 65', label: 'ICPC Asia West' },
-            { value: '2500+', label: 'Problems Solved' },
+            { value: '3000+', label: 'Problems Solved' },
             { value: '2090', label: 'LeetCode Rating' },
           ].map((stat) => (
             <div key={stat.label} className="bg-slate-800/50 border border-slate-700/60 rounded-2xl p-4 backdrop-blur-sm hover:border-cyan-500/30 transition-all duration-300 glow-card">

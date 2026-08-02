@@ -73,7 +73,7 @@ const contests = [
     border: 'border-cyan-500/30',
   },
   {
-    title: '2500+ Problems Solved',
+    title: '3000+ Problems Solved',
     detail: 'Across LeetCode, Codeforces, CodeChef, AtCoder & more',
     icon: Zap,
     color: 'text-green-400',

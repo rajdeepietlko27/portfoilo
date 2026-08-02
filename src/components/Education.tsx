@@ -6,7 +6,7 @@ const education = [
     degree: 'B.Tech — Computer Science and Engineering',
     period: 'Sep 2023 – May 2027',
     location: 'Lucknow, UP, India',
-    score: '9.48 / 10',
+    score: '9.44 / 10',
     scoreLabel: 'CGPA',
     current: true,
     highlights: [

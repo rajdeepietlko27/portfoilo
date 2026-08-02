@@ -92,7 +92,7 @@ export default function Skills() {
               <h4 className="text-white font-bold mb-4">Quick Facts</h4>
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: 'Current CGPA', value: '9.48 / 10' },
+                  { label: 'Current CGPA', value: '9.44 / 10' },
                   { label: 'Graduation', value: 'May 2027' },
                   { label: 'XII Percentage', value: '92.6%' },
                   { label: 'Location', value: 'Lucknow, India' },
